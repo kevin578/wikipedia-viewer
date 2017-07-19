@@ -6,6 +6,7 @@
 
 <link rel = 'stylesheet' href = 'style.css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src = "mustache/mustache.js"></script>
 <script src = 'main.js'></script>
 
 </head>
@@ -14,10 +15,29 @@
 
 <body>
 
+<div id = 'search'>
+<h1>Wikipedia Viewer</h1>
 <input type = 'text' id = 'searchBar'>
 <button type = 'button' onclick = 'renderSearch()'>Search</button>
+<button type = 'button' onclick = window.open('https://en.wikipedia.org/wiki/Special:Random');>I'm feeling lucky</button>
+</div>
+
 </body>
 
 
+
+<script id="template" type="x-tmpl-mustache">
+
+<div id = 'searchResults'>
+
+<a href = {{link}} target = '_blank'>
+<h1>{{title}}</h1>
+<p>{{description}}</p>
+</a>
+
+</div>
+
+
+</script>
 
 </html>
